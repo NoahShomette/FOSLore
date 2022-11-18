@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout main
-      uses: actions/checkout@v3.0.0
+      uses: actions/checkout@main
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@v0.16.1
       env:
