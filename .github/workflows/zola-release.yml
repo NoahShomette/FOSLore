@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout main
-      uses: actions/checkout@main
+      uses: actions/checkout@v3.0.0
       
     #- name: Get current date
     #  id: date
     #  run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
     - name: Build and deploy
-      uses: shalzz/zola-deploy-action@main
+      uses: shalzz/zola-deploy-action@0.16.1
       env:
         BUILD_DIR: .
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
