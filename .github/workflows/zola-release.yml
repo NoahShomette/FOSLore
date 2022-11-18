@@ -18,7 +18,7 @@ jobs:
     #  run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
     - name: Build and deploy
-      uses: shalzz/zola-deploy-action@v0.16.1
+      uses: shalzz/zola-deploy-action@main
       env:
         BUILD_DIR: .
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
