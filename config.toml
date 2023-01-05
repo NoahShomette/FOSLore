@@ -13,4 +13,5 @@ build_search_index = true
 highlight_code = true
 
 [extra]
+subtitle = ""
 # Put all your custom variables here

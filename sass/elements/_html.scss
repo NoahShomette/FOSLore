@@ -1,0 +1,17 @@
+﻿
+html {
+  font-family: 'League Spartan Medium', sans-serif;
+  //font-size: calc-rem($size-body-mobile);
+  background-color: $color-black;
+  scroll-padding-top: var(--scroll-padding-top);
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  //@media #{$bp-tablet-portrait-up} {
+  //  font-size: calc-rem($size-body);
+  //}
+}

@@ -1,0 +1,50 @@
+﻿body{
+  background-color: black;
+  color: white;
+}
+
+.layout{
+  min-height: 98vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.layout > div{
+  margin: 1vw 1vw 0 1vw;
+}
+
+.layout > .content{
+  width: 50vw;
+}
+
+.content_body{
+  height: 100%;
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  padding: 1vw;
+}
+
+.layout > .left_sidebar{
+  width: 15vw;
+  display: flex;
+  justify-content: right;
+}
+
+.layout > .right_sidebar{
+  width: 15vw;
+}
+
+.content_header{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 1vw;
+}
+
+.content_header > header{
+  text-align: center;
+}

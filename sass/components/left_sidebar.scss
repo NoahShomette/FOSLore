@@ -1,0 +1,25 @@
+﻿@import "vars";
+
+
+.left_sidebar *:link{
+  text-decoration: none;
+  //color: inherit;
+}
+
+.left_sidebar *:visited{
+  text-decoration: none;
+  //color: inherit;
+}
+
+.selected_link{
+  font-size: larger;
+  color: $color-blue;
+}
+
+.section_link{
+  color: white
+
+}
+.page_link{
+  color: white
+}

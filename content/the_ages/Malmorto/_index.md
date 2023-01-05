@@ -1,12 +1,10 @@
 ﻿+++
-title = "FOSLore"
+title = "Malmorto"
+description = "For Anyone, and Anything"
 sort_by = "title"
 template = "section.html"
-page_template = "page.html"
-description = "For Anyone, and Anything"
+page_template = "section.html"
 
 [extra]
 subtitle = "For Anyone, and Anything"
 +++
-
-# test

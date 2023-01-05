@@ -2,18 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Foslore</title>
+    <title>Foslore.com</title>
+    <link rel="stylesheet" href="/site.css"/>
 </head>
 <body>
-    <section class = "section">
-        <div>
-            <h1>Hello</h1>
-            
+<div class="layout">
+    <div class="left_sidebar">
+
+        <div class="sidebar_options">
+
         </div>
-        <div class="container">
+        <div class="content_links">
+            {% if page %}
+            <ul>
+                <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
+                {% for ancestor in page.ancestors | slice(start=page.ancestors | length-1) %}
+                {% set section = get_section(path=ancestor) %}
+                <li><a class="section_link" href="{{ section.permalink}}">{{ section.title }}</a></li>
+
+
+                {% for section_page in section.pages %}
+                {% if section_page.title in page.title %}
+                <li><a class="selected_link" href="{{ page.permalink}}">{{ section_page.title }}</a></li>
+                {% else %}
+                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+
+            </ul>
+            {% endif %}
+
+            {% if section %}
+            <ul>
+
+                <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
+                {% for ancestor in section.ancestors | slice(start=section.ancestors | length-1) %}
+                {% set ancestor_section = get_section(path=ancestor) %}
+                <li><a class="section_link" href="{{ ancestor_section.permalink}}">{{ ancestor_section.title }}</a></li>
+
+
+                {% for subsection in ancestor_section.subsections %}
+                {% set subsection = get_section(path=subsection) %}
+                {% if subsection.title in section.title %}
+                <li><a class="selected_link" href="{{ subsection.permalink}}">{{ subsection.title }}</a></li>
+                {% else %}
+                <li><a class="section_link" href="{{ subsection.permalink}}">{{ subsection.title }}</a></li>
+                {% endif %}
+                {% for section_page in subsection.pages %}
+                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
+                {% endfor %}
+                {% endfor %}
+                {% endfor %}
+
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    <div class="content">
+        <div class="content_header">
+            <header>
+                {% if section %}
+                <h1 class="title_text">{{ section.title }}</h1>
+                <h2 class="subtitle_blue_text">{{ section.description }}</h2>
+                {% elif page %}
+                <h1 class="title_text">{{ page.title }}</h1>
+                <h2 class="subtitle_blue_text">{{ page.description }}</h2>
+                {% endif %}
+            </header>
+        </div>
+        <div class="content_body">
             {% block content %} {% endblock content %}
         </div>
-    </section>
-
+    </div>
+    <div class="right_sidebar"></div>
+</div>
 </body>
 </html>
