@@ -1,19 +1,20 @@
 ﻿@import "vars";
 
-.content_links ul{
-  list-style-type: none;
 
+
+.sidebar_links ul{
+  list-style-type: none;
 }
 
-.content_links *:link{
+.sidebar_links *:link{
   text-decoration: none;
   text-align: right;
   display: flex;
   justify-content: right;
-  padding-top: 1vh;
+  padding-top: 1Rem;
 }
 
-.content_links *:hover{
+.sidebar_links *:hover{
   text-decoration: none;
   color: $color-blue;
 }

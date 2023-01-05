@@ -7,6 +7,26 @@
 }
 
 .subtitle_blue_text{
+  font-size: x-large;
+  letter-spacing: 1px;
   color: $color-blue;
 }
 
+
+
+
+.bold_text{
+  font-family: "League Spartan SemiBold", sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+}
+@media screen and (min-width: $bp-phone-landscape) {
+  .bold_text{
+    font-size: large;
+  }
+}
+@media screen and (min-width: $bp-desktop) {
+  .bold_text{
+    font-size: xx-large;
+  }
+}

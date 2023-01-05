@@ -10,9 +10,32 @@
     <div class="left_sidebar">
 
         <div class="sidebar_options">
+            <div class="button_horizontal_group">
+                <div class="sidebar_button">
+                    
+                </div>
+                <div class="sidebar_button">
 
+                </div>
+                <div class="sidebar_button">
+
+                </div>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">test</h2>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">test</h2>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">test</h2>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">test</h2>
+            </div>
         </div>
-        <div class="content_links">
+
+        <div class="sidebar_links">
             {% if page %}
             <ul>
                 <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
@@ -22,7 +45,7 @@
 
 
                 <!-- for the pages in our root section, we always want to display these -->
-                
+
                 {% for section_page in main_section.pages %}
                 {% if section_page.title in page.title %}
                 <li><a class="page_link selected" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
@@ -62,7 +85,7 @@
 
             {% if section %}
             <ul>
-                
+
                 <!-- the goal of this is to show everything from the ancestor section above down to the next level
                 basically everything above, and everything below in the sections
                 
@@ -97,7 +120,7 @@
                 -->
                 <!-- if there is an ancestor we set that as the start of our set. If there isnt then we set the section we are in. Either way we display that at our root -->
                 {% if section.ancestors | length > 0 %}
-                
+
                 {% for ancestor in section.ancestors | slice(start=section.ancestors | length-1) %}
                 {% set_global main_section = get_section(path=ancestor) %}
                 <li><a class="section_link" href="{{ main_section.permalink}}">{{ main_section.title }}</a></li>
@@ -106,7 +129,8 @@
                 {% else %}
 
                 {% set_global main_section = get_section(path=section.relative_path) %}
-                <li><a class="section_link selected" href="{{ main_section.permalink}}">{{ main_section.title }}</a></li>
+                <li><a class="section_link selected" href="{{ main_section.permalink}}">{{ main_section.title }}</a>
+                </li>
                 {% endif %}
 
                 <!-- for the pages in our root section, we always want to display these -->
@@ -141,9 +165,9 @@
                 <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
                 {% endfor %}
                 {% endfor %}
-                
+
                 {% endfor %}
-     
+
 
             </ul>
             {% endif %}
