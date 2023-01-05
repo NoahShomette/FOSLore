@@ -1,25 +1,36 @@
 ﻿@import "vars";
 
+.content_links ul{
+  list-style-type: none;
 
-.left_sidebar *:link{
-  text-decoration: none;
-  //color: inherit;
 }
 
-.left_sidebar *:visited{
+.content_links *:link{
   text-decoration: none;
-  //color: inherit;
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  padding-top: 1vh;
 }
 
-.selected_link{
-  font-size: larger;
+.content_links *:hover{
+  text-decoration: none;
   color: $color-blue;
 }
 
+
 .section_link{
+  font-size: x-large;
+  font-family: "League Spartan SemiBold", sans-serif;
   color: white
 
 }
 .page_link{
+  font-size: large;
+  font-family: "League Spartan SemiBold", sans-serif;
   color: white
+}
+
+.selected {
+  color: $color-blue;
 }
