@@ -1,24 +1,24 @@
 ﻿@import "vars";
 
-body{
+body {
   background-color: black;
   color: white;
   height: 100%;
 }
 
-.layout{
+.layout {
   min-height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.layout > div{
-  margin: 1vh 1vw 0 1vw;
+.layout > div {
+  margin: 0 10px 0 10px;
 }
 
 @media screen and (min-width: $bp-phone-landscape) {
-  .layout > .content{
+  .layout > .content {
     width: 100%;
   }
   .left_sidebar {
@@ -31,34 +31,34 @@ body{
     width: 0;
   }
 }
+
 @media screen and (min-width: $bp-desktop) {
-  .layout > .content{
-    width: 50vw;
+  .layout > .content {
+    min-width: 900px;
   }
   .left_sidebar {
     visibility: visible;
     display: flex;
-    width: 15vw;
+    width: 400px;
   }
   .right_sidebar {
     display: flex;
-    width: 15vw;
+    width: 300px;
   }
 }
 
 
-.content_body{
+.content_body {
   height: 100%;
   background-color: white;
   color: black;
   box-sizing: border-box;
-  padding: 1vw;
-  
+  padding: 10px;
 }
 
 .left_sidebar {
-  margin-bottom: 10vh;
-  width: 15vw;
+  margin-bottom: 50px;
+  width: 400px;
   justify-content: right;
   flex-direction: column;
   flex: border-box;
@@ -68,17 +68,17 @@ body{
 .left_sidebar > div {
 }
 
-.sidebar_options{
+.sidebar_options {
   justify-content: right;
   box-sizing: border-box;
-  width: 10vw;
+  width: 200px;
   height: 100%;
   display: flex;
   flex-direction: column;
   margin-left: auto;
 }
 
-.sidebar_options > *{
+.sidebar_options > * {
   margin: 0.5rem 0 0.5rem auto;
   box-sizing: border-box;
   display: flex;
@@ -88,15 +88,17 @@ body{
   width: 100%;
 }
 
-.button_horizontal_group{
+.button_horizontal_group {
   margin-left: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  min-height: 50px;
+  min-height: 45px;
   gap: 10px;
 }
 
-.sidebar_button{
+.sidebar_button {
+  padding-top: 5px;
+  padding-bottom: 5px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -107,22 +109,22 @@ body{
   border-radius: 0.5rem;
 }
 
-.right_sidebar{
-  width: 15vw;
+.right_sidebar {
+  width: 300px;
 }
 
-.content_header{
+.content_header {
   display: flex;
   justify-content: center;
   width: 100%;
   background-color: black;
   color: white;
-  padding: 1vw;
-  margin-top: -4vh;
-  
+  padding: 20px;
+  margin-top: -30px;
+
 }
 
-.content_header > header{
+.content_header > header {
   text-align: center;
-  
+
 }
