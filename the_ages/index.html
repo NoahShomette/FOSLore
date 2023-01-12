@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foslore.com</title>
+    <link rel="stylesheet" href="/site.css"/>
+</head>
+<body>
+<div class="layout">
+    <div class="left_sidebar">
+
+        <div class="sidebar_options">
+            <div class="button_horizontal_group">
+                <div class="sidebar_button">
+                    
+                </div>
+                <div class="sidebar_button">
+
+                </div>
+                <div class="sidebar_button">
+
+                </div>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">WIKI</h2>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">STORIES</h2>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">MISSION</h2>
+            </div>
+            <div class="sidebar_button">
+                <h2 class="bold_text">CONTRIBUTE</h2>
+            </div>
+        </div>
+
+        <div class="sidebar_links">
+
+            <!-- gets the content if we are in pages -->
+            
+
+            <!-- gets the content if we are in a section -->
+
+            
+            <ul>
+
+                <!-- the goal of this is to show everything from the ancestor section above down to the next level
+                basically everything above, and everything below in the sections
+                
+                if we have a hierarchy like this 
+                
+                Home 
+                > page
+                > page
+                > section
+                >>> page
+                >>> page
+                --
+                > section
+                >>> page
+                >>> page
+                >>> section
+                >>>>>> page
+                >>>>>> page
+                --
+                > section
+                >>> page
+                >>> page
+                >>> section
+                >>>>>> page
+                >>>>>> page
+                --
+                > section 
+                >>> page
+                >>> page
+                
+                we want to show all of homes pages and subsections, then each section in homes pages and child subsections, and then end it there
+                -->
+                <!-- if there is an ancestor we set that as the start of our set. If there isnt then we set the section we are in. Either way we display that at our root -->
+                
+
+                
+                
+                <li><a class="section_link" href="https:&#x2F;&#x2F;foslore.com&#x2F;">FOSLore</a></li>
+                
+
+                
+
+                <!-- for the pages in our root section, we always want to display these -->
+
+                
+                <li><a class="page_link" href="https:&#x2F;&#x2F;foslore.com&#x2F;about&#x2F;">About</a></li>
+                
+
+                <!-- for all the subsections in our root section we will loop, show their links, and check if the link is the one we are on -->
+
+                
+                
+                
+                <li><a class="section_link selected" href="https:&#x2F;&#x2F;foslore.com&#x2F;the_ages&#x2F;">The Ages</a></li>
+                
+
+                <!-- for each section that we go through, we will show all that sections pages -->
+                
+
+                <!-- then at the end of every loop for each subsection in our root section, 
+                we will go through and do the same thing, 
+                show all this subsections subsections and pages -->
+
+                
+                
+                <li><a class="section_link" href="https:&#x2F;&#x2F;foslore.com&#x2F;the_ages&#x2F;Malmorto&#x2F;">Malmorto</a></li>
+                
+                <li><a class="page_link" href="https:&#x2F;&#x2F;foslore.com&#x2F;the_ages&#x2F;Malmorto&#x2F;ruskov&#x2F;">Ruskov</a></li>
+                
+                <li><a class="page_link" href="https:&#x2F;&#x2F;foslore.com&#x2F;the_ages&#x2F;Malmorto&#x2F;origin&#x2F;">The Origin of Everything</a></li>
+                
+                
+
+                
+
+
+            </ul>
+            
+        </div>
+    </div>
+    <div class="content">
+        <div class="content_header">
+            <header>
+                
+                <h1 class="title_text">The Ages</h1>
+                <h2 class="subtitle_blue_text">A collection of facts and histories on each age</h2>
+                
+            </header>
+        </div>
+        <div class="content_body">
+            
+<h1 class="title">
+    The Ages
+</h1>
+
+        </div>
+    </div>
+    <div class="right_sidebar"></div>
+</div>
+</body>
+</html>
