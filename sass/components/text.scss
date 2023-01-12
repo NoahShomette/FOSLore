@@ -12,14 +12,14 @@
   color: $color-blue;
 }
 
-
-
-
 .bold_text{
   font-family: "League Spartan SemiBold", sans-serif;
   letter-spacing: 1px;
   margin: 0;
+  padding-top: 4px;
+  text-align: center;
 }
+
 @media screen and (min-width: $bp-phone-landscape) {
   .bold_text{
     font-size: large;
@@ -27,6 +27,6 @@
 }
 @media screen and (min-width: $bp-desktop) {
   .bold_text{
-    font-size: xx-large;
+    font-size: x-large;
   }
 }

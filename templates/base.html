@@ -22,20 +22,22 @@
                 </div>
             </div>
             <div class="sidebar_button">
-                <h2 class="bold_text">test</h2>
+                <h2 class="bold_text">WIKI</h2>
             </div>
             <div class="sidebar_button">
-                <h2 class="bold_text">test</h2>
+                <h2 class="bold_text">STORIES</h2>
             </div>
             <div class="sidebar_button">
-                <h2 class="bold_text">test</h2>
+                <h2 class="bold_text">MISSION</h2>
             </div>
             <div class="sidebar_button">
-                <h2 class="bold_text">test</h2>
+                <h2 class="bold_text">CONTRIBUTE</h2>
             </div>
         </div>
 
         <div class="sidebar_links">
+
+            <!-- gets the content if we are in pages -->
             {% if page %}
             <ul>
                 <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
@@ -82,6 +84,8 @@
 
             </ul>
             {% endif %}
+
+            <!-- gets the content if we are in a section -->
 
             {% if section %}
             <ul>

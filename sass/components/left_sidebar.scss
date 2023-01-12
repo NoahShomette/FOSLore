@@ -1,5 +1,11 @@
 ﻿@import "vars";
 
+// Three layers of links.
+// The middle, current layer we are in
+// the layer above
+// and the layer below
+// all can have sections and pages
+//
 
 
 .sidebar_links ul{
@@ -11,7 +17,8 @@
   text-align: right;
   display: flex;
   justify-content: right;
-  padding-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .sidebar_links *:hover{
@@ -22,14 +29,19 @@
 
 .section_link{
   font-size: x-large;
-  font-family: "League Spartan SemiBold", sans-serif;
-  color: white
+  font-family: "League Spartan ExtraBold", sans-serif;
+  letter-spacing: 1px;
+
+  color: white;
 
 }
 .page_link{
   font-size: large;
-  font-family: "League Spartan SemiBold", sans-serif;
-  color: white
+  font-family: "League Spartan Medium", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  //background-color: gray;
+  padding-right: 25px;
 }
 
 .selected {
