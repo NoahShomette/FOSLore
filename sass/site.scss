@@ -1,12 +1,14 @@
 ﻿@charset "utf-8";
 
-@import "components/vars";
+@import "_vars";
 
 @import 'fonts/league_spartan';
 
-
 @import "elements/html";
+
 @import "components/layout";
-@import "components/content";
-@import "components/left_sidebar";
 @import "components/text";
+@import "components/interior_content_header";
+
+@import "sections/content";
+@import "sections/left_sidebar";

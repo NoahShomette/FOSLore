@@ -1,0 +1,40 @@
+﻿@import "../vars";
+
+.content_header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin-top: -15px;
+}
+
+.content_header > header > h1 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.content_body {
+  // set the top and bottom padding here. Left and right are set for each individual child below so that it can be 
+  // disinherited by children if needed
+  padding: 25px 0 25px 0;
+  font-family: "Inter", sans-serif;
+  font-size: large;
+  line-height: 1.5;
+}
+
+
+@media screen and (min-width: $bp-phone-landscape) {
+  .content_body * {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media screen and (min-width: $bp-desktop) {
+  .content_body * {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
