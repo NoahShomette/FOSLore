@@ -5,6 +5,8 @@ body {
   color: white;
   height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .layout {
@@ -14,39 +16,13 @@ body {
   justify-content: center;
 }
 
-@media screen and (min-width: $bp-phone-landscape) {
-  .layout > .content {
-    width: 100%;
-  }
-  .left_sidebar {
-    visibility: hidden;
-    display: none;
-    width: 0;
-  }
-  .right_sidebar {
-    display: none;
-    width: 0;
-  }
+.layout > .content {
+  width: 100%;
 }
 
-@media screen and (min-width: $bp-desktop) {
-  .layout > .content {
-    min-width: 900px;
-  }
-  .left_sidebar {
-    visibility: visible;
-    display: flex;
-    width: 400px;
-  }
-  .right_sidebar {
-    display: flex;
-    width: 300px;
-  }
-}
 
 
 .content_body {
-  height: 100%;
   background-color: white;
   color: black;
 }
@@ -58,6 +34,10 @@ body {
   flex-direction: column;
   flex: border-box;
   overflow: hidden;
+  
+  visibility: hidden;
+  display: none;
+  width: 0;
 }
 
 .sidebar_options {
@@ -103,7 +83,40 @@ body {
 
 .right_sidebar {
   margin-left: 30px;
+  display: none;
   width: 300px;
 }
 
+// media queries must be last to override the basic mobile set
 
+// keep this but instead of the left sidebar staying it should smash down into a side button that can be unfolded across 
+// the screen to show the options. Similar to the default mobile design but it will be on the left instead of a bar on 
+// the bottom
+@media screen and (min-width: $bp-tablet-portrait) {
+  .left_sidebar {
+    visibility: visible;
+    display: flex;
+    width: 350px;
+  }
+  .right_sidebar {
+    visibility: visible;
+    display: flex;
+    width: 50px;
+  }
+}
+
+@media screen and (min-width: $bp-desktop) {
+  .layout > .content {
+    min-width: 900px;
+  }
+  .left_sidebar {
+    visibility: visible;
+    display: flex;
+    width: 400px;
+  }
+  .right_sidebar {
+    visibility: visible;
+    display: flex;
+    width: 300px;
+  }
+}

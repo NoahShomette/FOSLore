@@ -1,18 +1,21 @@
-﻿<!DOCTYPE html>
+{% import "macros/content_links.html" as content_links %}
+{% import "macros/footer.html" as footer %}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Foslore.com</title>
     <link rel="stylesheet" href="/site.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="layout">
     <div class="left_sidebar">
-
         <div class="sidebar_options">
             <div class="button_horizontal_group">
                 <div class="sidebar_button">
-                    
+
                 </div>
                 <div class="sidebar_button">
 
@@ -34,147 +37,8 @@
                 <h2 class="bold_text">CONTRIBUTE</h2>
             </div>
         </div>
-
         <div class="sidebar_links">
-
-            <!-- gets the content if we are in pages -->
-            {% if page %}
-            <ul>
-                <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
-                {% for ancestor in page.ancestors | slice(start=page.ancestors | length-1) %}
-                {% set_global main_section = get_section(path=ancestor) %}
-                <li><a class="section_link" href="{{ main_section.permalink}}">{{ main_section.title }}</a></li>
-
-
-                <!-- for the pages in our root section, we always want to display these -->
-
-                {% for section_page in main_section.pages %}
-                {% if section_page.title in page.title %}
-                <li><a class="page_link selected" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-                {% else %}
-                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-                {% endif %}
-                {% endfor %}
-
-                <!-- for all the subsections in our root section we will loop, show their links, and check if the link is the one we are on -->
-
-                {% for main_subsections in main_section.subsections %}
-                {% set subsection = get_section(path=main_subsections) %}
-                <li><a class="section_link" href="{{ subsection.permalink}}">{{ subsection.title }}</a></li>
-
-                <!-- for each section that we go through, we will show all that sections pages -->
-                {% for section_page in subsection.pages %}
-                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-                {% endfor %}
-
-                <!-- then at the end of every loop for each subsection in our root section, 
-                we will go through and do the same thing, 
-                show all this subsections subsections and pages -->
-
-                {% for second_subsections in subsection.subsections %}
-                {% set subsection = get_section(path=second_subsections) %}
-                <li><a class="section_link" href="{{ subsection.permalink}}">{{ subsection.title }}</a></li>
-                {% for section_page in subsection.pages %}
-                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-                {% endfor %}
-                {% endfor %}
-
-                {% endfor %}
-                {% endfor %}
-
-            </ul>
-            {% endif %}
-
-            <!-- gets the content if we are in a section -->
-
-            {% if section %}
-            <ul>
-
-                <!-- the goal of this is to show everything from the ancestor section above down to the next level
-                basically everything above, and everything below in the sections
-                
-                if we have a hierarchy like this 
-                
-                Home 
-                > page
-                > page
-                > section
-                >>> page
-                >>> page
-                --
-                > section
-                >>> page
-                >>> page
-                >>> section
-                >>>>>> page
-                >>>>>> page
-                --
-                > section
-                >>> page
-                >>> page
-                >>> section
-                >>>>>> page
-                >>>>>> page
-                --
-                > section 
-                >>> page
-                >>> page
-                
-                we want to show all of homes pages and subsections, then each section in homes pages and child subsections, and then end it there
-                -->
-                <!-- if there is an ancestor we set that as the start of our set. If there isnt then we set the section we are in. Either way we display that at our root -->
-                {% if section.ancestors | length > 0 %}
-
-                {% for ancestor in section.ancestors | slice(start=section.ancestors | length-1) %}
-                {% set_global main_section = get_section(path=ancestor) %}
-                <li><a class="section_link" href="{{ main_section.permalink}}">{{ main_section.title }}</a></li>
-                {% endfor %}
-
-                {% else %}
-
-                {% set_global main_section = get_section(path=section.relative_path) %}
-                <li><a class="section_link selected" href="{{ main_section.permalink}}">{{ main_section.title }}</a>
-                </li>
-                {% endif %}
-
-                <!-- for the pages in our root section, we always want to display these -->
-
-                {% for section_page in main_section.pages %}
-                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-                {% endfor %}
-
-                <!-- for all the subsections in our root section we will loop, show their links, and check if the link is the one we are on -->
-
-                {% for main_subsections in main_section.subsections %}
-                {% set subsection = get_section(path=main_subsections) %}
-                {% if subsection.title in section.title %}
-                <li><a class="section_link selected" href="{{ subsection.permalink}}">{{ subsection.title }}</a></li>
-                {% else %}
-                <li><a class="section_link" href="{{ subsection.permalink}}">{{ subsection.title }}</a></li>
-                {% endif %}
-
-                <!-- for each section that we go through, we will show all that sections pages -->
-                {% for section_page in subsection.pages %}
-                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-                {% endfor %}
-
-                <!-- then at the end of every loop for each subsection in our root section, 
-                we will go through and do the same thing, 
-                show all this subsections subsections and pages -->
-
-                {% for second_subsections in subsection.subsections %}
-                {% set subsection = get_section(path=second_subsections) %}
-                <li><a class="section_link" href="{{ subsection.permalink}}">{{ subsection.title }}</a></li>
-                {% for section_page in subsection.pages %}
-                <li><a class="page_link" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-                {% endfor %}
-                {% endfor %}
-
-                {% endfor %}
-
-
-            </ul>
-            {% endif %}
+            {{content_links::content_links(show_parent=true)}}
         </div>
     </div>
     <div class="content">
@@ -195,5 +59,8 @@
     </div>
     <div class="right_sidebar"></div>
 </div>
+
+{{ footer::footer() }}
+
 </body>
 </html>

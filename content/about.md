@@ -2,6 +2,7 @@
 title = "About"
 sort_by = "title"
 template = "page.html"
+description = "Whats the point of this"
 
 [extra]
 subtitle = "Whats the point of this"

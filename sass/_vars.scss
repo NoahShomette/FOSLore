@@ -1,24 +1,18 @@
-﻿
-// Typography
+﻿// Typography
 $size-body: 16px; // Usual browser default size
 $size-body-mobile: 14px; // Size for mobile
 
 // Breakpoints
+//$bp-phone-portrait: 320px; //  Default size. Kept here just to see
 $bp-phone-landscape: 480px; // Mobile-landscape (and larger)
 $bp-tablet-portrait: 768px; // Tablet-portrait (and larger)
 $bp-tablet-landscape: 992px; // Tablet-landscape (and larger)
 $bp-desktop: 1200px; // Laptops (and larger)
 
-$bp-phone-portrait-only: '(max-width: #{$bp-phone-landscape - 1})';
-$bp-phone-landscape-up: '(min-width: #{$bp-phone-landscape})';
-$bp-phone-landscape-down: '(max-width: #{$bp-tablet-portrait - 1})';
-$bp-tablet-portrait-up: '(min-width: #{$bp-tablet-portrait})';
-$bp-tablet-portrait-down: '(max-width: #{$bp-tablet-landscape - 1})';
-$bp-tablet-landscape-up: '(min-width: #{$bp-tablet-landscape})';
-$bp-tablet-landscape-down: '(max-width: #{$bp-desktop - 1})';
-$bp-desktop-up: '(min-width: #{$bp-desktop})';
-
 // Colors
 $color-black: #000;
 $color-white: #ececec;
 $color-blue: #3399FF;
+
+// Padding / Margins
+$standard-padding: 25px
