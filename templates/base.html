@@ -1,5 +1,6 @@
 {% import "macros/content_links.html" as content_links %}
 {% import "macros/footer.html" as footer %}
+{% import "macros/mobile_menu.html" as mobile_menu %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,31 +11,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+{{mobile_menu::mobile_menu()}}
 <div class="layout">
     <div class="left_sidebar">
-        <div class="sidebar_options">
+        <div class="options_links">
             <div class="button_horizontal_group">
-                <div class="sidebar_button">
+                <div class="button">
 
                 </div>
-                <div class="sidebar_button">
+                <div class="button">
 
                 </div>
-                <div class="sidebar_button">
+                <div class="button">
 
                 </div>
             </div>
-            <div class="sidebar_button">
-                <h2 class="bold_text">WIKI</h2>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
             </div>
-            <div class="sidebar_button">
-                <h2 class="bold_text">STORIES</h2>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/wiki">WIKI</a>
             </div>
-            <div class="sidebar_button">
-                <h2 class="bold_text">MISSION</h2>
-            </div>
-            <div class="sidebar_button">
-                <h2 class="bold_text">CONTRIBUTE</h2>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/stories">STORIES</a>
             </div>
         </div>
         <div class="sidebar_links">
@@ -45,15 +44,15 @@
         <div class="content_header">
             <header>
                 {% if section %}
-                <h1 class="title_text">{{ section.title }}</h1>
-                <h2 class="subtitle_blue_text">{{ section.description }}</h2>
+                <h1 class="title_text text_alignment_center">{{ section.title }}</h1>
+                <h2 class="subtitle_text text_alignment_center color_blue" style="margin: 15px">{{ section.description }}</h2>
                 {% elif page %}
-                <h1 class="title_text">{{ page.title }}</h1>
-                <h2 class="subtitle_blue_text">{{ page.description }}</h2>
+                <h1 class="title_text text_alignment_center">{{ page.title }}</h1>
+                <h2 class="subtitle_text text_alignment_center color_blue" style="margin: 15px">{{ page.description }}</h2>
                 {% endif %}
             </header>
         </div>
-        <div class="content_body">
+        <div class="content_body body_text inter_semibold">
             {% block content %} {% endblock content %}
         </div>
     </div>

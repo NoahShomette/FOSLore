@@ -34,51 +34,9 @@ body {
   flex-direction: column;
   flex: border-box;
   overflow: hidden;
-  
   visibility: hidden;
   display: none;
   width: 0;
-}
-
-.sidebar_options {
-  justify-content: right;
-  box-sizing: border-box;
-  width: 200px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-}
-
-.sidebar_options > * {
-  margin: 0.5rem 0 0.5rem 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-.button_horizontal_group {
-  margin-left: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  min-height: 45px;
-  gap: 10px;
-}
-
-.sidebar_button {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background-color: $color-blue;
-  border-radius: 0.5rem;
 }
 
 .right_sidebar {

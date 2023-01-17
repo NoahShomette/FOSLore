@@ -8,7 +8,7 @@ page_template = "section.html"
 [extra]
 +++
 
-{% interior_content_header() %}
+{% interior_content_header(bg_color="$color-black") %}
 
 PAGE OF THE WEEK
 

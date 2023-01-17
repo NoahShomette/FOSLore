@@ -7,12 +7,39 @@
 // all can have sections and pages
 //
 
+.options_links {
+  justify-content: right;
+  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
 
-.sidebar_links ul{
+.options_links > * {
+  margin: 0.5rem 0 0.5rem 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.button_horizontal_group {
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 45px;
+  gap: 10px;
+}
+
+
+.sidebar_links ul {
   list-style-type: none;
 }
 
-.sidebar_links *:link{
+.sidebar_links *:link {
   text-decoration: none;
   text-align: right;
   display: flex;
@@ -21,26 +48,23 @@
   padding-bottom: 5px;
 }
 
-.sidebar_links *:hover{
+.sidebar_links *:hover {
   text-decoration: none;
   color: $color-blue;
+  transition: color 0.25s;
 }
 
 
-.section_link{
+.section_link {
   font-size: x-large;
-  font-family: "League Spartan ExtraBold", sans-serif;
   letter-spacing: 1px;
-
   color: white;
-
 }
-.page_link{
+
+.page_link {
   font-size: large;
-  font-family: "League Spartan Medium", sans-serif;
   letter-spacing: 1px;
   color: white;
-  //background-color: gray;
   padding-right: 25px;
 }
 

@@ -19,9 +19,6 @@
   // set the top and bottom padding here. Left and right are set for each individual child below so that it can be 
   // disinherited by children if needed
   padding: 25px 0 25px 0;
-  font-family: "Inter Semi Bold", sans-serif;
-  font-size: large;
-  line-height: 1.5;
 
 }
 
@@ -43,9 +40,5 @@
   .content_body * {
     padding-left: 25px;
     padding-right: 25px;
-  }
-
-  .content_body {
-    font-size: large;
   }
 }

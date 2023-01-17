@@ -1,0 +1,35 @@
+﻿{% macro mobile_menu() %}
+
+<div class="mobile_menu_holder">
+
+    <div class="mobile_button_plus_tray">
+        <div>
+            <a class="mobile_menu_button league_spartan_extrabold header_text color_white" href="/wiki">WIKI</a>
+        </div>
+        <div>
+            <a class="mobile_menu_button league_spartan_extrabold header_text color_white" href="/stories">STORIES</a>
+        </div>
+        <div>
+            <a class="mobile_menu_button league_spartan_extrabold header_text color_white" href="/search">SEARCH</a>
+        </div>
+        <input class="mobile_menu_state" id="mobile_menu_state" type="checkbox"/>
+        <label class="mobile_menu_toggle" for="mobile_menu_state">
+        </label>
+
+        <div class="mobile_menu_tray">
+
+            <div class="mobile_menu_tray_button">
+                <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
+            </div>
+            <div class="mobile_menu_links">
+                {{content_links::content_links(show_parent=true)}}
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endmacro %}

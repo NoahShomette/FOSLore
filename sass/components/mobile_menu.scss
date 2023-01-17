@@ -1,0 +1,80 @@
+﻿@import "../vars";
+
+.mobile_menu_holder{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.mobile_button_plus_tray:before{
+  position: fixed;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+}
+
+.mobile_menu_holder *:link{
+  text-decoration: none;
+}
+
+.mobile_button_plus_tray > div{
+  padding-top: 15px;
+  display: grid;
+  place-items: center;
+}
+
+.mobile_button_plus_tray{
+  height: 75px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.mobile_button_plus_tray:last-child{
+
+}
+
+.mobile_menu_tray{
+  position: fixed;
+  visibility: visible;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: black;
+  z-index: -2;
+  transition: 0.5s height ease-in-out;
+  overflow: scroll;
+}
+
+.mobile_menu_state{
+  z-index: 5;
+}
+
+.mobile_menu_state:checked ~ .mobile_menu_tray{
+  height: 75%;
+}
+
+.mobile_menu_links{
+  justify-content: left;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.mobile_menu_links ul{
+    list-style-type: none;
+}
+
+.mobile_menu_links *:hover {
+  text-decoration: none;
+  color: $color-blue;
+  transition: color 0.25s;
+}
+
+.mobile_menu_tray_button{
+  justify-content: center;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
