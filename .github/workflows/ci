@@ -1,0 +1,24 @@
+name: Zola on GitHub Pages
+
+on: 
+ pull-request:
+  branches:
+   - main
+ workflow_dispatch:
+
+jobs:
+  build:
+    name: Test site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main
+      uses: actions/checkout@v3.0.0
+     
+      
+    - name: Build and deploy
+      uses: shalzz/zola-deploy-action@v0.16.1
+      env:
+        BUILD_ONLY: true
+        CHECK_LINKS: true
+        BUILD_DIR: .
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
