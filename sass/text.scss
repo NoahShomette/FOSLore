@@ -1,4 +1,4 @@
-﻿@import "../vars";
+﻿@import "./vars";
 
 // basic text settings - size, spacing, line-height
 .body_text{
@@ -28,15 +28,17 @@
 
 // text font settings
 .league_spartan{
-  font-family: "League Spartan Medium", sans-serif;
+  font-family: "League Spartan", sans-serif;
 }
 
 .league_spartan_semibold{
-  font-family: "League Spartan SemiBold", sans-serif;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
 }
 
 .league_spartan_extrabold{
-  font-family: "League Spartan ExtraBold", sans-serif;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 900;
 }
 
 .inter{
@@ -44,7 +46,8 @@
 }
 
 .inter_semibold{
-  font-family: "Inter 100", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
 }
 
 // 
@@ -56,8 +59,6 @@
   padding-top: 4px;
   font-size: large;
 }
-
-
 
 .text_alignment_center{
   text-align: center;

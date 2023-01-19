@@ -11,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/helpers.js"></script>
 
-    <!--
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
-    -->
+    
  </head>
 <body>
 {% block mobile_menu %} 
@@ -53,15 +53,15 @@
         <div class="content_header">
             <header>
                 {% if section %}
-                <h1 class="title_text text_alignment_center">{{ section.title }}</h1>
-                <h2 class="subtitle_text text_alignment_center color_blue" style="margin: 15px">{{ section.description }}</h2>
+                <h1 class="title_text league_spartan_extrabold text_alignment_center">{{ section.title }}</h1>
+                <h2 class="subtitle_text league_spartan_semibold text_alignment_center color_blue" style="margin: 15px">{{ section.description }}</h2>
                 {% elif page %}
-                <h1 class="title_text text_alignment_center">{{ page.title }}</h1>
-                <h2 class="subtitle_text text_alignment_center color_blue" style="margin: 15px">{{ page.description }}</h2>
+                <h1 class="title_text league_spartan_extrabold text_alignment_center">{{ page.title }}</h1>
+                <h2 class="subtitle_text league_spartan_semibold text_alignment_center color_blue" style="margin: 15px">{{ page.description }}</h2>
                 {% endif %}
             </header>
         </div>
-        <div class="content_body body_text inter_semibold">
+        <div class="content_body body_text inter">
             {% block content %} {% endblock content %}
         </div>
     </div>
