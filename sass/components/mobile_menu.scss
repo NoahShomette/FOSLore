@@ -20,6 +20,7 @@
   }
 }
 
+// the background of the mobile menu
 .mobile_button_plus_tray:before{
   position: fixed;
   content: "";
@@ -33,31 +34,31 @@
   text-decoration: none;
 }
 
-.mobile_button_plus_tray > div{
-  padding-top: 15px;
+.mobile_button_plus_tray > *{
   display: grid;
   place-items: center;
 }
 
 .mobile_button_plus_tray{
-  height: 75px;
+  box-shadow: 0 -5px 15px black;
+
+  height: $mobile-menu-width;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
 
-.mobile_button_plus_tray:last-child{
-
-}
-
 .mobile_menu_tray{
   position: fixed;
-  visibility: visible;
-  bottom: 0;
+  visibility: hidden;
+  bottom: $mobile-menu-width;
+  padding-top: $standard-padding;
+  border-radius: $standard-padding $standard-padding 0 0;
+  box-shadow: 0 -5px 15px black;
   width: 100%;
-  height: 0;
+  max-height: 0;
   background-color: black;
   z-index: -2;
-  transition: 0.5s height ease-in-out;
+  transition: 0.3s all ease-in-out;
   overflow: scroll;
 }
 
@@ -66,7 +67,8 @@
 }
 
 .mobile_menu_state:checked ~ .mobile_menu_tray{
-  height: 75%;
+  visibility: visible;
+  max-height: 75%;
 }
 
 .mobile_menu_links{

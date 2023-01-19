@@ -6,4 +6,19 @@
   background-color: white;
   color: black;
   padding: $standard-padding 0 $standard-padding 0;
+  margin-bottom: $mobile-menu-width;
+}
+
+@media screen and (min-width: $bp-tablet-portrait) {
+  .footer_body{
+    margin-bottom: 0;
+
+  }
+}
+
+@media screen and (min-width: $bp-desktop) {
+  .footer_body{
+    margin-bottom: 0;
+
+  }
 }

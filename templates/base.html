@@ -9,6 +9,8 @@
     <title>Foslore.com</title>
     <link rel="stylesheet" href="/site.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/helpers.js"></script>
+
     <!--
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +18,9 @@
     -->
  </head>
 <body>
-{{mobile_menu::mobile_menu()}}
+{% block mobile_menu %} 
+{% endblock mobile_menu %}
+
 <div class="layout">
     <div class="left_sidebar">
         <div class="options_links">
@@ -42,7 +46,7 @@
             </div>
         </div>
         <div class="sidebar_links">
-            {{content_links::content_links(show_parent=true)}}
+            {% block sidebar_links %} {% endblock sidebar_links %}
         </div>
     </div>
     <div class="content">

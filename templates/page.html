@@ -2,6 +2,16 @@
 
 <!-- represents an individual page, an article, a story, etc. -->
 
+{% block mobile_menu %}
+{{mobile_menu::mobile_menu()}}
+{% endblock mobile_menu %}
+
+{% block sidebar_links %}
+{{content_links::content_links(show_parent=true, show_child_sections=true)}}
+{% endblock sidebar_links %}
+
+
+
 {% block content %}
 
 {{ page.content | safe }}

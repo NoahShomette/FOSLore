@@ -1,7 +1,7 @@
 ﻿+++
 title = "FOSLore"
 sort_by = "title"
-template = "section.html"
+template = "index.html"
 page_template = "page.html"
 description = "For Anyone, and Anything"
 

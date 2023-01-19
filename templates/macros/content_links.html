@@ -3,13 +3,13 @@
 
     {% if page %}
     <ul>
+        
         <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
         {% for ancestor in page.ancestors | slice(start=page.ancestors | length-1) %}
         {% set_global main_section = get_section(path=ancestor) %}
         <li><a class="section_link league_spartan_extrabold" href="{{ main_section.permalink}}">{{ main_section.title
             }}</a></li>
-
-
+        
         <!-- for the pages in our root section, we always want to display these -->
 
         {% for section_page in main_section.pages %}
@@ -90,7 +90,7 @@
         we want to show all of homes pages and subsections, then each section in homes pages and child subsections, and then end it there
         -->
         <!-- if there is an ancestor we set that as the start of our set. If there isnt then we set the section we are in. Either way we display that at our root -->
-        {% if section.ancestors | length > 0 %}
+        {% if section.ancestors | length > 1 %}
 
         {% for ancestor in section.ancestors | slice(start=section.ancestors | length-1) %}
         {% set_global main_section = get_section(path=ancestor) %}

@@ -1,6 +1,13 @@
-{% extends "section.html" %}
+{% extends "base.html" %}
 
 <!-- The main index -->
+{% block mobile_menu %}
+{{mobile_menu::mobile_menu()}}
+{% endblock mobile_menu %}
+
+{% block sidebar_links %}
+{{content_links::content_links(show_parent=true, show_child_sections=false)}}
+{% endblock sidebar_links %}
 
 {% block content %}
 {{ section.content | safe }}
