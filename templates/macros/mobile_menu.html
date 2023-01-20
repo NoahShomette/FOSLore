@@ -4,17 +4,18 @@
 
     <div class="mobile_button_plus_tray">
         <div>
-            <a class="mobile_menu_button selected_icon" href="/wiki">
-                <img src="/assets/icons/globe.svg" alt="Link to wiki home page" class="icon globe_icon"/>
+            <a class="mobile_menu_button {{add_class_if_path_begins::add_class_if_path_begins(class="selected_icon", begins="/wiki")}}"
+               href="/wiki">
+                <img src="/assets/icons/globe.svg" alt="Link to wiki home page" class="icon globe_icon "/>
             </a>
         </div>
         <div>
-            <a class="mobile_menu_button" href="/stories">
-                <img src="/assets/icons/book-open.svg" alt="Link to wiki home page" class="icon book_open_icon"/>
+            <a class="mobile_menu_button {{add_class_if_path_begins::add_class_if_path_begins(class="selected_icon", begins="/stories")}}" href="/stories">
+                <img src="/assets/icons/book-open.svg" alt="Link to stories home page" class="icon book_open_icon"/>
             </a>
         </div>
         <div>
-            <a class="mobile_menu_button" href="/search">
+            <a class="mobile_menu_button {{add_class_if_path_begins::add_class_if_path_begins(class="selected_icon", begins="/search")}}" href="/search">
                 <img src="/assets/icons/search.svg" alt="Link to wiki home page" class="icon search_icon"/>
             </a>
         </div>
