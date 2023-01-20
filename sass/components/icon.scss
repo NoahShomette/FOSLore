@@ -4,11 +4,11 @@
   padding: 10px;
   border-radius: 10px;
   border: solid white 2px;
-  transition: all 0.3s ease-in-out;
+  transition: all 1.0s ease-in-out;
 }
 
 .selected_icon > .icon {
-    border-radius: 10px;
+  border-radius: 10px;
     background-color: $color-blue;
-    border: solid white 2px;
+    border: solid $color-blue 2px;
 }
