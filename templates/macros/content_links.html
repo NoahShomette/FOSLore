@@ -5,7 +5,7 @@
 <ul>
     <!-- TODO update the page to show the section and alll its sections of the section above the one that the page is in -->
     <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
-    {% for ancestor in page.ancestors | slice(start=page.ancestors | length-1) %}
+    {% for ancestor in page.ancestors | slice(start=page.ancestors | length-2) %}
     {% set_global main_section = get_section(path=ancestor) %}
     <li><a class="section_link league_spartan_extrabold" href="{{ main_section.permalink}}">{{ main_section.title
         }}</a>
@@ -29,6 +29,13 @@
 
     {% for main_subsections in main_section.subsections %}
     {% set subsection = get_section(path=main_subsections) %}
+
+    {% for ancestor in page.ancestors | slice(start=page.ancestors | length-1) %}
+    {% set_global parent_section = get_section(path=ancestor) %}
+    {% endfor %}
+
+    {% if subsection.path != parent_section.path %}
+
     <li><a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{ subsection.title }}</a>
 
         <ul>
@@ -54,11 +61,14 @@
                     {% endfor %}
                 </ul>
             </li>
+            {% endfor %}
         </ul>
-
-        {% endfor %}
-        {% endfor %}
+        
     </li>
+    {% endif %}
+
+    {% endfor %}
+
     {% endif %}
 
     {% endfor %}
