@@ -3,50 +3,64 @@
 
 {% if page %}
 <ul>
-
+    <!-- TODO update the page to show the section and alll its sections of the section above the one that the page is in -->
     <!-- gets the most recent ancestor, then displays every section of that ancestor, and then every page of each section-->
     {% for ancestor in page.ancestors | slice(start=page.ancestors | length-1) %}
     {% set_global main_section = get_section(path=ancestor) %}
     <li><a class="section_link league_spartan_extrabold" href="{{ main_section.permalink}}">{{ main_section.title
-        }}</a></li>
+        }}</a>
 
-    <!-- for the pages in our root section, we always want to display these -->
+        <!-- for the pages in our root section, we always want to display these -->
+        <ul>
+            {% for section_page in main_section.pages %}
+            {% if section_page.title in page.title %}
+            <li><a class="page_link league_spartan selected" href="{{ section_page.permalink}}">{{ section_page.title
+                }}</a>
+            </li>
+            {% else %}
+            <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
 
-    {% for section_page in main_section.pages %}
-    {% if section_page.title in page.title %}
-    <li><a class="page_link league_spartan selected" href="{{ section_page.permalink}}">{{ section_page.title }}</a>
     </li>
-    {% else %}
-    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-    {% endif %}
-    {% endfor %}
-
     <!-- for all the subsections in our root section we will loop, show their links, and check if the link is the one we are on -->
+    {% if show_child_sections %}
 
     {% for main_subsections in main_section.subsections %}
     {% set subsection = get_section(path=main_subsections) %}
     <li><a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{ subsection.title }}</a>
+
+        <ul>
+            <!-- for each section that we go through, we will show all that sections pages -->
+            {% for section_page in subsection.pages %}
+            <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <!-- then at the end of every loop for each subsection in our root section, 
+        we will go through and do the same thing, 
+        show all this subsections subsections and pages -->
+        <ul>
+            {% for second_subsections in subsection.subsections %}
+            {% set subsection = get_section(path=second_subsections) %}
+            <li><a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{ subsection.title
+                }}</a>
+                <ul>
+
+                    {% for section_page in subsection.pages %}
+                    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title
+                        }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+
+        {% endfor %}
+        {% endfor %}
     </li>
+    {% endif %}
 
-    <!-- for each section that we go through, we will show all that sections pages -->
-    {% for section_page in subsection.pages %}
-    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-    {% endfor %}
-
-    <!-- then at the end of every loop for each subsection in our root section, 
-    we will go through and do the same thing, 
-    show all this subsections subsections and pages -->
-
-    {% for second_subsections in subsection.subsections %}
-    {% set subsection = get_section(path=second_subsections) %}
-    <li><a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{ subsection.title }}</a>
-    </li>
-    {% for section_page in subsection.pages %}
-    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-    {% endfor %}
-    {% endfor %}
-
-    {% endfor %}
     {% endfor %}
 
 </ul>
@@ -91,28 +105,32 @@
     -->
     <!-- if there is an ancestor we set that as the start of our set. If there isnt then we set the section we are in. Either way we display that at our root -->
     <!-- if section.ancestors is one or less, that means we are one of our big sections and we dont want to show anything above us-->
-    {% if section.ancestors | length > 1 %}
+    <li>
+        {% if section.ancestors | length > 1 %}
 
-    {% for ancestor in section.ancestors | slice(start=section.ancestors | length-1) %}
-    {% set_global main_section = get_section(path=ancestor) %}
-    <li><a class="section_link league_spartan_extrabold" href="{{ main_section.permalink}}">{{ main_section.title
-        }}</a></li>
-    {% endfor %}
+        {% for ancestor in section.ancestors | slice(start=section.ancestors | length-1) %}
+        {% set_global main_section = get_section(path=ancestor) %}
+        <a class="section_link league_spartan_extrabold" href="{{ main_section.permalink}}">{{ main_section.title
+            }}</a>
+        {% endfor %}
 
-    {% else %}
+        {% else %}
 
-    {% set_global main_section = get_section(path=section.relative_path) %}
-    <li><a class="section_link league_spartan_extrabold selected" href="{{ main_section.permalink}}">{{
-        main_section.title }}</a>
+        {% set_global main_section = get_section(path=section.relative_path) %}
+        <a class="section_link league_spartan_extrabold selected" href="{{ main_section.permalink}}">{{
+            main_section.title }}</a>
+
+        {% endif %}
+
+        <!-- for the pages in our root section, we always want to display these -->
+
+        {% for section_page in main_section.pages %}
+        <ul>
+            <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
+        </ul>
     </li>
-    {% endif %}
-
-    <!-- for the pages in our root section, we always want to display these -->
-
-    {% for section_page in main_section.pages %}
-    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
     {% endfor %}
-    
+
     <!-- for all the subsections in our root section we will loop (if show_child_sections is true), show their links, 
     and check if the link is the one we are on -->
 
@@ -122,29 +140,41 @@
     {% set subsection = get_section(path=main_subsections) %}
     {% if subsection.title in section.title %}
     <li><a class="section_link league_spartan_extrabold selected" href="{{ subsection.permalink}}">{{
-        subsection.title }}</a></li>
-    {% else %}
-    <li><a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{ subsection.title }}</a>
+        subsection.title }}</a>
+        {% else %}
+        <a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{ subsection.title }}</a>
+        {% endif %}
+
+        <ul>
+
+            <!-- for each section that we go through, we will show all that sections pages -->
+            {% for section_page in subsection.pages %}
+            <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a>
+            </li>
+            {% endfor %}
+
+            <!-- then at the end of every loop for each subsection in our root section, 
+            we will go through and do the same thing, 
+            show all this subsections subsections and pages -->
+
+            {% for second_subsections in subsection.subsections %}
+            {% set subsection = get_section(path=second_subsections) %}
+            <li><a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{
+                subsection.title
+                }}</a>
+                <ul>
+
+                    {% for section_page in subsection.pages %}
+                    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title
+                        }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+
+            {% endfor %}
+        </ul>
+
     </li>
-    {% endif %}
-
-    <!-- for each section that we go through, we will show all that sections pages -->
-    {% for section_page in subsection.pages %}
-    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-    {% endfor %}
-
-    <!-- then at the end of every loop for each subsection in our root section, 
-    we will go through and do the same thing, 
-    show all this subsections subsections and pages -->
-
-    {% for second_subsections in subsection.subsections %}
-    {% set subsection = get_section(path=second_subsections) %}
-    <li><a class="section_link league_spartan_extrabold" href="{{ subsection.permalink}}">{{ subsection.title }}</a>
-    </li>
-    {% for section_page in subsection.pages %}
-    <li><a class="page_link league_spartan" href="{{ section_page.permalink}}">{{ section_page.title }}</a></li>
-    {% endfor %}
-    {% endfor %}
 
     {% endfor %}
     {% endif %}
