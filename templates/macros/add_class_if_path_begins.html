@@ -1,0 +1,11 @@
+﻿{% macro add_class_if_path_begins(class, begins) %}
+
+{% if section and section.path is starting_with(begins) %}
+{{class}}
+{% endif %}
+
+{% if page and page.path is starting_with(begins) %}
+{{class}}
+{% endif %}
+
+{% endmacro %}

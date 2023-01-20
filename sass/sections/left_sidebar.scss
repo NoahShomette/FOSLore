@@ -48,26 +48,12 @@
   padding-bottom: 5px;
 }
 
+.sidebar_links * .page_link{
+  padding-right: 25px;
+}
+
 .sidebar_links *:hover {
   text-decoration: none;
   color: $color-blue;
   transition: color 0.25s;
-}
-
-
-.section_link {
-  font-size: x-large;
-  letter-spacing: 1px;
-  color: white;
-}
-
-.page_link {
-  font-size: large;
-  letter-spacing: 1px;
-  color: white;
-  padding-right: 25px;
-}
-
-.selected {
-  color: $color-blue;
 }

@@ -1,28 +1,34 @@
-﻿{% macro mobile_menu() %}
+﻿{% macro mobile_menu(show_content_links_child_sections) %}
 
 <div class="mobile_menu_holder">
 
     <div class="mobile_button_plus_tray">
         <div>
-            <a class="mobile_menu_button league_spartan_extrabold header_text color_white" href="/wiki">WIKI</a>
+            <a class="mobile_menu_button {{add_class_if_path_begins::add_class_if_path_begins(class="selected_icon", begins="/wiki")}}"
+               href="/wiki">
+                <img src="/assets/icons/globe.svg" alt="Link to wiki home page" class="icon globe_icon "/>
+            </a>
         </div>
         <div>
-            <a class="mobile_menu_button league_spartan_extrabold header_text color_white" href="/stories">STORIES</a>
+            <a class="mobile_menu_button {{add_class_if_path_begins::add_class_if_path_begins(class="selected_icon", begins="/stories")}}" href="/stories">
+                <img src="/assets/icons/book-open.svg" alt="Link to stories home page" class="icon book_open_icon"/>
+            </a>
         </div>
         <div>
-            <a class="mobile_menu_button league_spartan_extrabold header_text color_white" href="/search">SEARCH</a>
+            <a class="mobile_menu_button {{add_class_if_path_begins::add_class_if_path_begins(class="selected_icon", begins="/search")}}" href="/search">
+                <img src="/assets/icons/search.svg" alt="Link to wiki home page" class="icon search_icon"/>
+            </a>
         </div>
-        
+
         <!-- ignore missing label since this is for mobile menu for now -->
         <input class="mobile_menu_state" id="mobile_menu_state" type="checkbox"/>
 
         <div class="mobile_menu_tray">
-
             <div class="mobile_menu_tray_button">
                 <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
             </div>
             <div class="mobile_menu_links">
-                {{content_links::content_links(show_parent=true)}}
+                {{content_links::content_links(show_parent=true, show_child_sections=show_content_links_child_sections)}}
             </div>
         </div>
 
