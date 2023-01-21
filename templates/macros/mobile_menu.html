@@ -1,4 +1,4 @@
-﻿{% macro mobile_menu() %}
+﻿{% macro mobile_menu(show_content_links_child_sections) %}
 
 <div class="mobile_menu_holder">
 
@@ -28,7 +28,7 @@
                 <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
             </div>
             <div class="mobile_menu_links">
-                {{content_links::content_links(show_parent=true)}}
+                {{content_links::content_links(show_parent=true, show_child_sections=show_content_links_child_sections)}}
             </div>
         </div>
 

@@ -2,7 +2,7 @@
 title = "FOSLore"
 sort_by = "title"
 template = "index.html"
-page_template = "page.html"
+page_template = "index_page.html"
 description = "For Anyone, and Anything"
 
 [extra]

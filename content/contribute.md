@@ -1,7 +1,7 @@
 ﻿+++
-title = "About"
+title = "Contribute"
 sort_by = "title"
-description = "Whats the point of this"
+description = "How can you help"
 
 [extra]
 subtitle = "Whats the point of this"
