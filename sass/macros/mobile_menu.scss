@@ -63,7 +63,24 @@
 }
 
 .mobile_menu_state{
+  display: none;
   z-index: 5;
+}
+
+.mobile_menu_icon_open{
+  display: none;
+}
+.mobile_menu_state:checked ~ .mobile_menu_icon_closed{
+  display: none;
+}
+.mobile_menu_state:checked ~ .mobile_menu_icon_open{
+  display: inherit;
+}
+
+.mobile_menu_icon_open > .icon {
+  border-radius: 10px;
+  background-color: $color-blue;
+  border: solid $color-blue 2px;
 }
 
 
