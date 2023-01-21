@@ -34,9 +34,13 @@
   gap: 10px;
 }
 
+.sidebar_links{
+  padding-left: 40px;
+}
 
 .sidebar_links ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .sidebar_links *:link {
@@ -44,12 +48,9 @@
   text-align: right;
   display: flex;
   justify-content: right;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.sidebar_links * .page_link{
-  padding-right: 25px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  line-height: 1.5rem;
 }
 
 .sidebar_links *:hover {

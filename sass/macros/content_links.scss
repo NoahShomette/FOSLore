@@ -10,8 +10,69 @@
   font-size: large;
   letter-spacing: 1px;
   color: white;
+
 }
 
 .selected {
   color: $color-blue;
+}
+
+.first{
+  padding-left: 20px;
+}
+
+.second{
+  padding-left: 50px;
+}
+
+.third{
+  padding-left: 80px;
+}
+
+.fourth{
+  padding-left: 110px;
+}
+
+@media screen and (min-width: $bp-tablet-portrait) {
+  .first{
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  .second{
+    padding-left: 0;
+    padding-right: 40px;
+  }
+
+  .third{
+    padding-left: 0;
+    padding-right: 60px;
+  }
+
+  .fourth{
+    padding-left: 0;
+    padding-right: 80px;
+  }
+}
+
+@media screen and (min-width: $bp-desktop) {
+  .first{
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  .second{
+    padding-left: 0;
+    padding-right: 40px;
+  }
+
+  .third{
+    padding-left: 0;
+    padding-right: 60px;
+  }
+
+  .fourth{
+    padding-left: 0;
+    padding-right: 80px;
+  }
 }

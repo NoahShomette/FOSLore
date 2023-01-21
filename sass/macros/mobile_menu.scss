@@ -106,6 +106,7 @@
 
 .mobile_menu_links ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .mobile_menu_links *:link {
@@ -113,11 +114,12 @@
   text-align: left;
   display: flex;
   justify-content: left;
-  padding-bottom: 10px;
+  padding-bottom: 7.5px;
+  padding-top: 7.5px;
 }
 
 .mobile_menu_links * .page_link{
-  padding-left: 25px;
+  //padding-left: 25px;
 }
 
 
