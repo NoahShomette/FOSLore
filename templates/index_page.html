@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-<!-- represents an individual page, an article, a story, etc. -->
+<!-- represents an individual page at the top of the section heirarchy, in the site index section-->
 
 {% block mobile_menu %}
-{{mobile_menu::mobile_menu(show_content_links_child_sections=true)}}
+{{mobile_menu::mobile_menu(show_content_links_child_sections=false)}}
 {% endblock mobile_menu %}
 
 
