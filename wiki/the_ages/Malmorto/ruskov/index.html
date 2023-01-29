@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foslore.com</title>
+    <link rel="stylesheet" href="/site.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/helpers.js"></script>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
+    
+ </head>
+<body>
+
+
+
+<div class="mobile_menu_holder">
+
+    <div class="mobile_button_plus_tray">
+        <div>
+            <a class="mobile_menu_button 
+
+
+
+
+ selected_icon
+
+
+"
+            href="/wiki">
+            <img src="/assets/icons/globe.svg" alt="Link to wiki home page" class="icon globe_icon "/>
+            </a>
+        </div>
+        <div>
+            <a class="mobile_menu_button 
+
+
+
+
+
+" href="/stories">
+            <img src="/assets/icons/book-open.svg" alt="Link to stories home page" class="icon book_open_icon"/>
+            </a>
+        </div>
+        <div>
+            <a class="mobile_menu_button 
+
+
+
+
+
+" href="/search">
+            <img src="/assets/icons/search.svg" alt="Link to wiki home page" class="icon search_icon"/>
+            </a>
+        </div>
+
+        
+        <input class="mobile_menu_state" id="mobile_menu_state" type="checkbox"/>
+        
+        <label for="mobile_menu_state" class="mobile_menu_icon_closed">
+            <img src="/assets/icons/menu.svg" alt="Expand mobile menu" class="icon"/></label>
+        
+        <label for="mobile_menu_state" class="mobile_menu_icon_open">
+            <img src="/assets/icons/x.svg" alt="close mobile menu" class="icon"/></label>
+
+        
+        <div class="mobile_menu_tray">
+            <div class="mobile_menu_tray_button">
+                <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
+            </div>
+            <div class="mobile_menu_links">
+                
+
+
+<ul>
+    <!-- gets the most recent grandparent section ancestor, then displays every section of that ancestor, and then every page of each section-->
+
+    
+    
+    
+
+    
+    
+
+    
+    <li><a class="section_link league_spartan_bold first" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;">The Ages</a>
+
+        <!-- for the pages in our root section, we always want to display these -->
+        <ul>
+            
+            
+            <li><a class="page_link league_spartan_semibold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;ages-timeline&#x2F;">Timeline of Ages</a></li>
+            
+            
+        </ul>
+
+
+        <!-- for all the subsections in our root section we will loop, show their links, and check if the link is the one we are on -->
+        
+
+        
+        
+        <ul>
+
+            <li><a class="section_link league_spartan_bold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;Malmorto&#x2F;">Malmorto</a>
+
+                <ul>
+                    <!-- for each section that we go through, we will show all that sections pages -->
+                    
+                    
+                    <li><a class="page_link league_spartan_semibold selected third" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;Malmorto&#x2F;ruskov&#x2F;">Ruskov</a>
+                    </li>
+                    
+                    
+                    
+                    <li><a class="page_link league_spartan_semibold third" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;Malmorto&#x2F;origin&#x2F;">The Origin of Everything</a></li>
+                    
+                    
+                </ul>
+
+                <!-- then at the end of every loop for each subsection in our root section, 
+                we will go through and do the same thing, 
+                show all this subsections subsections and pages -->
+                <ul>
+                    
+                </ul>
+
+            </li>
+        </ul>
+
+        
+
+        
+    </li>
+    
+    
+    
+
+    
+    
+
+</ul>
+
+
+<!-- gets the content if we are in a section -->
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="layout">
+    <div class="left_sidebar">
+        <div class="options_links">
+            <div class="button_horizontal_group">
+                <div class="button">
+
+                </div>
+                <div class="button">
+
+                </div>
+                <div class="button">
+
+                </div>
+            </div>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
+            </div>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/wiki">WIKI</a>
+            </div>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/stories">STORIES</a>
+            </div>
+        </div>
+        <div class="sidebar_links">
+            
+
+
+
+
+<ul>
+    <!-- gets the most recent grandparent section ancestor, then displays every section of that ancestor, and then every page of each section-->
+
+    
+    
+    
+
+    
+    
+
+    
+    <li><a class="section_link league_spartan_bold first" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;">The Ages</a>
+
+        <!-- for the pages in our root section, we always want to display these -->
+        <ul>
+            
+            
+            <li><a class="page_link league_spartan_semibold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;ages-timeline&#x2F;">Timeline of Ages</a></li>
+            
+            
+        </ul>
+
+
+        <!-- for all the subsections in our root section we will loop, show their links, and check if the link is the one we are on -->
+        
+
+        
+        
+        <ul>
+
+            <li><a class="section_link league_spartan_bold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;Malmorto&#x2F;">Malmorto</a>
+
+                <ul>
+                    <!-- for each section that we go through, we will show all that sections pages -->
+                    
+                    
+                    <li><a class="page_link league_spartan_semibold selected third" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;Malmorto&#x2F;ruskov&#x2F;">Ruskov</a>
+                    </li>
+                    
+                    
+                    
+                    <li><a class="page_link league_spartan_semibold third" href="https:&#x2F;&#x2F;foslore.com&#x2F;wiki&#x2F;the_ages&#x2F;Malmorto&#x2F;origin&#x2F;">The Origin of Everything</a></li>
+                    
+                    
+                </ul>
+
+                <!-- then at the end of every loop for each subsection in our root section, 
+                we will go through and do the same thing, 
+                show all this subsections subsections and pages -->
+                <ul>
+                    
+                </ul>
+
+            </li>
+        </ul>
+
+        
+
+        
+    </li>
+    
+    
+    
+
+    
+    
+
+</ul>
+
+
+<!-- gets the content if we are in a section -->
+
+
+
+
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="content_header">
+            <header>
+                
+                <h1 class="title_text league_spartan_extrabold text_alignment_center">Ruskov</h1>
+                <h2 class="subtitle_text league_spartan_bold text_alignment_center color_blue" style="margin: 15px"></h2>
+                
+            </header>
+        </div>
+        <div class="content_body body_text inter">
+            
+
+<h1 id="test">test</h1>
+
+
+
+        </div>
+    </div>
+    <div class="right_sidebar"></div>
+</div>
+
+
+
+<div class="footer_body">
+    <div class="footer_layout">
+
+        <div> Test</div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

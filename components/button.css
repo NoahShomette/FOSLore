@@ -1,0 +1,1 @@
+.button{padding-top:5px;padding-bottom:5px;box-sizing:border-box;display:flex;justify-content:center;align-items:center;height:100%;width:100%;background-color:#39f;border-radius:0.5rem;animation:ease-in-out;transition:color 0.25s;text-decoration:none}.button:hover{background-color:#ececec;color:#39f}

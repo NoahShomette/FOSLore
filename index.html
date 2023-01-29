@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foslore.com</title>
+    <link rel="stylesheet" href="/site.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/helpers.js"></script>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
+    
+ </head>
+<body>
+
+
+
+<div class="mobile_menu_holder">
+
+    <div class="mobile_button_plus_tray">
+        <div>
+            <a class="mobile_menu_button 
+
+
+
+
+
+"
+            href="/wiki">
+            <img src="/assets/icons/globe.svg" alt="Link to wiki home page" class="icon globe_icon "/>
+            </a>
+        </div>
+        <div>
+            <a class="mobile_menu_button 
+
+
+
+
+
+" href="/stories">
+            <img src="/assets/icons/book-open.svg" alt="Link to stories home page" class="icon book_open_icon"/>
+            </a>
+        </div>
+        <div>
+            <a class="mobile_menu_button 
+
+
+
+
+
+" href="/search">
+            <img src="/assets/icons/search.svg" alt="Link to wiki home page" class="icon search_icon"/>
+            </a>
+        </div>
+
+        
+        <input class="mobile_menu_state" id="mobile_menu_state" type="checkbox"/>
+        
+        <label for="mobile_menu_state" class="mobile_menu_icon_closed">
+            <img src="/assets/icons/menu.svg" alt="Expand mobile menu" class="icon"/></label>
+        
+        <label for="mobile_menu_state" class="mobile_menu_icon_open">
+            <img src="/assets/icons/x.svg" alt="close mobile menu" class="icon"/></label>
+
+        
+        <div class="mobile_menu_tray">
+            <div class="mobile_menu_tray_button">
+                <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
+            </div>
+            <div class="mobile_menu_links">
+                
+
+
+
+<!-- gets the content if we are in a section -->
+
+
+<ul>
+
+    <!-- the goal of this is to show everything from the ancestor section above down to the next level
+    basically everything above, and everything below in the sections
+    
+    Excluding the top sections though. Home should only show the pages in homes folder and the other top sections
+    like wiki and stories should not show the others
+    
+    if we have a hierarchy like this 
+    
+    Home 
+    > page
+    > page
+    --
+    section
+    > page
+    > page
+    > section
+    >>> page
+    >>> page
+    --
+    section
+    > page
+    > page
+    > section
+    >>> page
+    >>> page
+    --
+    section 
+    > page
+    > page
+    
+    we want to show all of homes pages and subsections, then each section in homes pages and child subsections, and then end it there
+    -->
+    <!-- if there is an ancestor we set that as the start of our set. If there isnt then we set the section we are in. Either way we display that at our root -->
+    <!-- if section.ancestors is one or less, that means we are one of our big sections and we dont want to show anything above us-->
+    <li>
+        
+
+        
+        <a class="section_link league_spartan_bold selected first" href="https:&#x2F;&#x2F;foslore.com&#x2F;">FOSLore</a>
+
+        
+
+        <!-- for the pages in our root section, we always want to display these -->
+
+        
+        <ul>
+            <li><a class="page_link league_spartan_semibold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;about&#x2F;">About</a></li>
+        </ul>
+        
+        <ul>
+            <li><a class="page_link league_spartan_semibold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;contribute&#x2F;">Contribute</a></li>
+        </ul>
+        
+
+
+        <!-- for all the subsections in our root section we will loop (if show_child_sections is true), show their links, 
+        and check if the link is the one we are on -->
+
+        
+
+    </li>
+
+
+</ul>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="layout">
+    <div class="left_sidebar">
+        <div class="options_links">
+            <div class="button_horizontal_group">
+                <div class="button">
+
+                </div>
+                <div class="button">
+
+                </div>
+                <div class="button">
+
+                </div>
+            </div>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/">HOME</a>
+            </div>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/wiki">WIKI</a>
+            </div>
+            <div>
+                <a class="button league_spartan_extrabold header_text color_white" href="/stories">STORIES</a>
+            </div>
+        </div>
+        <div class="sidebar_links">
+            
+
+
+
+
+<!-- gets the content if we are in a section -->
+
+
+<ul>
+
+    <!-- the goal of this is to show everything from the ancestor section above down to the next level
+    basically everything above, and everything below in the sections
+    
+    Excluding the top sections though. Home should only show the pages in homes folder and the other top sections
+    like wiki and stories should not show the others
+    
+    if we have a hierarchy like this 
+    
+    Home 
+    > page
+    > page
+    --
+    section
+    > page
+    > page
+    > section
+    >>> page
+    >>> page
+    --
+    section
+    > page
+    > page
+    > section
+    >>> page
+    >>> page
+    --
+    section 
+    > page
+    > page
+    
+    we want to show all of homes pages and subsections, then each section in homes pages and child subsections, and then end it there
+    -->
+    <!-- if there is an ancestor we set that as the start of our set. If there isnt then we set the section we are in. Either way we display that at our root -->
+    <!-- if section.ancestors is one or less, that means we are one of our big sections and we dont want to show anything above us-->
+    <li>
+        
+
+        
+        <a class="section_link league_spartan_bold selected first" href="https:&#x2F;&#x2F;foslore.com&#x2F;">FOSLore</a>
+
+        
+
+        <!-- for the pages in our root section, we always want to display these -->
+
+        
+        <ul>
+            <li><a class="page_link league_spartan_semibold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;about&#x2F;">About</a></li>
+        </ul>
+        
+        <ul>
+            <li><a class="page_link league_spartan_semibold second" href="https:&#x2F;&#x2F;foslore.com&#x2F;contribute&#x2F;">Contribute</a></li>
+        </ul>
+        
+
+
+        <!-- for all the subsections in our root section we will loop (if show_child_sections is true), show their links, 
+        and check if the link is the one we are on -->
+
+        
+
+    </li>
+
+
+</ul>
+
+
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="content_header">
+            <header>
+                
+                <h1 class="title_text league_spartan_extrabold text_alignment_center">FOSLore</h1>
+                <h2 class="subtitle_text league_spartan_bold text_alignment_center color_blue" style="margin: 15px">For Anyone, and Anything</h2>
+                
+            </header>
+        </div>
+        <div class="content_body body_text inter">
+            
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Viverra nibh cras pulvinar mattis nunc sed. Augue eget arcu dictum varius. Consectetur adipiscing elit duis
+tristique sollicitudin nibh. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Purus gravida quis
+blandit turpis cursus in. In dictum non consectetur a erat nam. Amet aliquam id diam maecenas ultricies mi eget. Nibh
+sed pulvinar proin gravida. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Neque aliquam vestibulum morbi
+blandit. Praesent semper feugiat nibh sed pulvinar proin gravida. Suscipit adipiscing bibendum est ultricies. Nunc
+scelerisque viverra mauris in aliquam.</p>
+<p>Adipiscing tristique risus nec feugiat in fermentum posuere. Nunc non blandit massa enim nec dui nunc. Vivamus arcu
+felis bibendum ut tristique et egestas. Netus et malesuada fames ac. Quis viverra nibh cras pulvinar mattis nunc.
+Parturient montes nascetur ridiculus mus. Morbi leo urna molestie at elementum eu facilisis sed odio. Elementum eu
+facilisis sed odio morbi quis commodo odio. Adipiscing tristique risus nec feugiat in fermentum posuere. Fermentum leo
+vel orci porta non pulvinar neque.</p>
+<p>Non tellus orci ac auctor augue mauris. Ultricies mi eget mauris pharetra et. Sed enim ut sem viverra. A erat nam at
+lectus urna duis convallis. Ut ornare lectus sit amet est placerat. Nibh nisl condimentum id venenatis a condimentum.
+Justo eget magna fermentum iaculis eu non diam phasellus vestibulum. Ullamcorper sit amet risus nullam eget felis. Non
+sodales neque sodales ut. Velit aliquet sagittis id consectetur purus ut faucibus.</p>
+<p>Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Mauris pharetra et ultrices neque ornare aenean
+euismod. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Commodo viverra maecenas accumsan lacus. At
+ultrices mi tempus imperdiet nulla malesuada. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Nam libero
+justo laoreet sit amet. Consequat id porta nibh venenatis cras sed. Nec sagittis aliquam malesuada bibendum arcu vitae
+elementum curabitur. Fringilla ut morbi tincidunt augue. Cras fermentum odio eu feugiat pretium nibh. Dui nunc mattis
+enim ut tellus elementum sagittis vitae et. Vulputate ut pharetra sit amet aliquam id diam maecenas.</p>
+<p>Eros donec ac odio tempor orci. Lacus suspendisse faucibus interdum posuere lorem. Nullam ac tortor vitae purus faucibus
+ornare suspendisse. Convallis posuere morbi leo urna molestie at elementum. Pretium aenean pharetra magna ac placerat
+vestibulum. Quam id leo in vitae turpis massa. Odio euismod lacinia at quis risus. Et malesuada fames ac turpis egestas
+sed tempus urna et. Semper quis lectus nulla at volutpat diam ut. Pulvinar elementum integer enim neque. Tortor posuere
+ac ut consequat semper. Risus viverra adipiscing at in tellus. Ornare suspendisse sed nisi lacus. Ornare arcu odio ut
+sem nulla pharetra. Pharetra magna ac placerat vestibulum lectus mauris.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Viverra nibh cras pulvinar mattis nunc sed. Augue eget arcu dictum varius. Consectetur adipiscing elit duis
+tristique sollicitudin nibh. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Purus gravida quis
+blandit turpis cursus in. In dictum non consectetur a erat nam. Amet aliquam id diam maecenas ultricies mi eget. Nibh
+sed pulvinar proin gravida. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Neque aliquam vestibulum morbi
+blandit. Praesent semper feugiat nibh sed pulvinar proin gravida. Suscipit adipiscing bibendum est ultricies. Nunc
+scelerisque viverra mauris in aliquam.</p>
+<p>Adipiscing tristique risus nec feugiat in fermentum posuere. Nunc non blandit massa enim nec dui nunc. Vivamus arcu
+felis bibendum ut tristique et egestas. Netus et malesuada fames ac. Quis viverra nibh cras pulvinar mattis nunc.
+Parturient montes nascetur ridiculus mus. Morbi leo urna molestie at elementum eu facilisis sed odio. Elementum eu
+facilisis sed odio morbi quis commodo odio. Adipiscing tristique risus nec feugiat in fermentum posuere. Fermentum leo
+vel orci porta non pulvinar neque.</p>
+<p>Non tellus orci ac auctor augue mauris. Ultricies mi eget mauris pharetra et. Sed enim ut sem viverra. A erat nam at
+lectus urna duis convallis. Ut ornare lectus sit amet est placerat. Nibh nisl condimentum id venenatis a condimentum.
+Justo eget magna fermentum iaculis eu non diam phasellus vestibulum. Ullamcorper sit amet risus nullam eget felis. Non
+sodales neque sodales ut. Velit aliquet sagittis id consectetur purus ut faucibus.</p>
+<p>Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Mauris pharetra et ultrices neque ornare aenean
+euismod. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Commodo viverra maecenas accumsan lacus. At
+ultrices mi tempus imperdiet nulla malesuada. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Nam libero
+justo laoreet sit amet. Consequat id porta nibh venenatis cras sed. Nec sagittis aliquam malesuada bibendum arcu vitae
+elementum curabitur. Fringilla ut morbi tincidunt augue. Cras fermentum odio eu feugiat pretium nibh. Dui nunc mattis
+enim ut tellus elementum sagittis vitae et. Vulputate ut pharetra sit amet aliquam id diam maecenas.</p>
+<p>Eros donec ac odio tempor orci. Lacus suspendisse faucibus interdum posuere lorem. Nullam ac tortor vitae purus faucibus
+ornare suspendisse. Convallis posuere morbi leo urna molestie at elementum. Pretium aenean pharetra magna ac placerat
+vestibulum. Quam id leo in vitae turpis massa. Odio euismod lacinia at quis risus. Et malesuada fames ac turpis egestas
+sed tempus urna et. Semper quis lectus nulla at volutpat diam ut. Pulvinar elementum integer enim neque. Tortor posuere
+ac ut consequat semper. Risus viverra adipiscing at in tellus. Ornare suspendisse sed nisi lacus. Ornare arcu odio ut
+sem nulla pharetra. Pharetra magna ac placerat vestibulum lectus mauris.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Viverra nibh cras pulvinar mattis nunc sed. Augue eget arcu dictum varius. Consectetur adipiscing elit duis
+tristique sollicitudin nibh. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Purus gravida quis
+blandit turpis cursus in. In dictum non consectetur a erat nam. Amet aliquam id diam maecenas ultricies mi eget. Nibh
+sed pulvinar proin gravida. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Neque aliquam vestibulum morbi
+blandit. Praesent semper feugiat nibh sed pulvinar proin gravida. Suscipit adipiscing bibendum est ultricies. Nunc
+scelerisque viverra mauris in aliquam.</p>
+<p>Adipiscing tristique risus nec feugiat in fermentum posuere. Nunc non blandit massa enim nec dui nunc. Vivamus arcu
+felis bibendum ut tristique et egestas. Netus et malesuada fames ac. Quis viverra nibh cras pulvinar mattis nunc.
+Parturient montes nascetur ridiculus mus. Morbi leo urna molestie at elementum eu facilisis sed odio. Elementum eu
+facilisis sed odio morbi quis commodo odio. Adipiscing tristique risus nec feugiat in fermentum posuere. Fermentum leo
+vel orci porta non pulvinar neque.</p>
+<p>Non tellus orci ac auctor augue mauris. Ultricies mi eget mauris pharetra et. Sed enim ut sem viverra. A erat nam at
+lectus urna duis convallis. Ut ornare lectus sit amet est placerat. Nibh nisl condimentum id venenatis a condimentum.
+Justo eget magna fermentum iaculis eu non diam phasellus vestibulum. Ullamcorper sit amet risus nullam eget felis. Non
+sodales neque sodales ut. Velit aliquet sagittis id consectetur purus ut faucibus.</p>
+<p>Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Mauris pharetra et ultrices neque ornare aenean
+euismod. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Commodo viverra maecenas accumsan lacus. At
+ultrices mi tempus imperdiet nulla malesuada. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Nam libero
+justo laoreet sit amet. Consequat id porta nibh venenatis cras sed. Nec sagittis aliquam malesuada bibendum arcu vitae
+elementum curabitur. Fringilla ut morbi tincidunt augue. Cras fermentum odio eu feugiat pretium nibh. Dui nunc mattis
+enim ut tellus elementum sagittis vitae et. Vulputate ut pharetra sit amet aliquam id diam maecenas.</p>
+<p>Eros donec ac odio tempor orci. Lacus suspendisse faucibus interdum posuere lorem. Nullam ac tortor vitae purus faucibus
+ornare suspendisse. Convallis posuere morbi leo urna molestie at elementum. Pretium aenean pharetra magna ac placerat
+vestibulum. Quam id leo in vitae turpis massa. Odio euismod lacinia at quis risus. Et malesuada fames ac turpis egestas
+sed tempus urna et. Semper quis lectus nulla at volutpat diam ut. Pulvinar elementum integer enim neque. Tortor posuere
+ac ut consequat semper. Risus viverra adipiscing at in tellus. Ornare suspendisse sed nisi lacus. Ornare arcu odio ut
+sem nulla pharetra. Pharetra magna ac placerat vestibulum lectus mauris.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Viverra nibh cras pulvinar mattis nunc sed. Augue eget arcu dictum varius. Consectetur adipiscing elit duis
+tristique sollicitudin nibh. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Purus gravida quis
+blandit turpis cursus in. In dictum non consectetur a erat nam. Amet aliquam id diam maecenas ultricies mi eget. Nibh
+sed pulvinar proin gravida. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Neque aliquam vestibulum morbi
+blandit. Praesent semper feugiat nibh sed pulvinar proin gravida. Suscipit adipiscing bibendum est ultricies. Nunc
+scelerisque viverra mauris in aliquam.</p>
+<p>Adipiscing tristique risus nec feugiat in fermentum posuere. Nunc non blandit massa enim nec dui nunc. Vivamus arcu
+felis bibendum ut tristique et egestas. Netus et malesuada fames ac. Quis viverra nibh cras pulvinar mattis nunc.
+Parturient montes nascetur ridiculus mus. Morbi leo urna molestie at elementum eu facilisis sed odio. Elementum eu
+facilisis sed odio morbi quis commodo odio. Adipiscing tristique risus nec feugiat in fermentum posuere. Fermentum leo
+vel orci porta non pulvinar neque.</p>
+<p>Non tellus orci ac auctor augue mauris. Ultricies mi eget mauris pharetra et. Sed enim ut sem viverra. A erat nam at
+lectus urna duis convallis. Ut ornare lectus sit amet est placerat. Nibh nisl condimentum id venenatis a condimentum.
+Justo eget magna fermentum iaculis eu non diam phasellus vestibulum. Ullamcorper sit amet risus nullam eget felis. Non
+sodales neque sodales ut. Velit aliquet sagittis id consectetur purus ut faucibus.</p>
+<p>Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Mauris pharetra et ultrices neque ornare aenean
+euismod. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Commodo viverra maecenas accumsan lacus. At
+ultrices mi tempus imperdiet nulla malesuada. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Nam libero
+justo laoreet sit amet. Consequat id porta nibh venenatis cras sed. Nec sagittis aliquam malesuada bibendum arcu vitae
+elementum curabitur. Fringilla ut morbi tincidunt augue. Cras fermentum odio eu feugiat pretium nibh. Dui nunc mattis
+enim ut tellus elementum sagittis vitae et. Vulputate ut pharetra sit amet aliquam id diam maecenas.</p>
+<p>Eros donec ac odio tempor orci. Lacus suspendisse faucibus interdum posuere lorem. Nullam ac tortor vitae purus faucibus
+ornare suspendisse. Convallis posuere morbi leo urna molestie at elementum. Pretium aenean pharetra magna ac placerat
+vestibulum. Quam id leo in vitae turpis massa. Odio euismod lacinia at quis risus. Et malesuada fames ac turpis egestas
+sed tempus urna et. Semper quis lectus nulla at volutpat diam ut. Pulvinar elementum integer enim neque. Tortor posuere
+ac ut consequat semper. Risus viverra adipiscing at in tellus. Ornare suspendisse sed nisi lacus. Ornare arcu odio ut
+sem nulla pharetra. Pharetra magna ac placerat vestibulum lectus mauris.</p>
+
+
+        </div>
+    </div>
+    <div class="right_sidebar"></div>
+</div>
+
+
+
+<div class="footer_body">
+    <div class="footer_layout">
+
+        <div> Test</div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

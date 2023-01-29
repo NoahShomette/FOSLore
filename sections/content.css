@@ -1,0 +1,1 @@
+.content_header{display:flex;justify-content:center;width:100%;background-color:black;color:white;padding:20px;margin-top:-15px}.content_header>header>h1{margin-bottom:0;text-align:center}.content_body{padding:25px 0 25px 0}.content_body *{padding-left:25px;padding-right:25px}@media screen and (min-width: 1200px){.content_body *{padding-left:25px;padding-right:25px}}
