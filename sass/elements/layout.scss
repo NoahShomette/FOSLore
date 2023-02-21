@@ -2,27 +2,38 @@
 
 body {
   background-color: black;
-  color: white;
+  color: $color-white;
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-.layout {
+.page {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.contentLayout {
   min-height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.layout > .content {
+.content {
   width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .content_body {
-  background-color: white;
+  background-color: $color-white;
   color: black;
+  flex-grow: 100;
 }
 
 .left_sidebar {
@@ -45,7 +56,7 @@ body {
 
 // media queries must be last to override the basic mobile set
 
-// keep this but instead of the left sidebar staying it should smash down into a side button that can be unfolded across 
+// TODO: keep this but instead of the left sidebar staying it should smash down into a side button that can be unfolded across 
 // the screen to show the options. Similar to the default mobile design but it will be on the left instead of a bar on 
 // the bottom
 @media screen and (min-width: $bp-tablet-portrait) {
@@ -62,8 +73,8 @@ body {
 }
 
 @media screen and (min-width: $bp-desktop) {
-  .layout > .content {
-    min-width: 900px;
+  .content {
+    max-width: 1100px;
   }
   .left_sidebar {
     visibility: visible;
